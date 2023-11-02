@@ -1,2 +1,14 @@
-
+[Oo]bj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+HolidaySearchFeature/.vs/HolidaySearchFeature/v17/TestStore/0/testlog.manifest
+HolidaySearchFeature/.vs/HolidaySearchFeature/v17/TestStore/0/000.testlog
+HolidaySearchFeature/.vs/HolidaySearchFeature/v17/.suo
+HolidaySearchFeature/.vs/HolidaySearchFeature/v17/.futdcache.v1
 HolidaySearchFeature/.vs/HolidaySearchFeature/DesignTimeBuild/.dtbcache.v2
+HolidaySearchFeature.Tests/obj/project.nuget.cache
+HolidaySearchFeature.Tests/obj/project.assets.json
+HolidaySearchFeature.Tests/obj/HolidaySearchFeature.Tests.csproj.nuget.dgspec.json
+HolidaySearchFeature.Tests/obj/Debug/net6.0/HolidaySearchFeature.Tests.csproj.AssemblyReference.cache
+HolidaySearchFeature/.vs/HolidaySearchFeature/v17/.suo

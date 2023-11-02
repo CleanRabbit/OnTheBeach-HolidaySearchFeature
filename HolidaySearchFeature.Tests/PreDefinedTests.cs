@@ -3,6 +3,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace HolidaySearchFeature.Tests
@@ -25,8 +26,9 @@ namespace HolidaySearchFeature.Tests
 
 		}
 
-		internal List<FlightModel>? TestFlightData { get; set; }
-		internal List<HotelModel>? TestHotelData { get; set; }
+		internal IEnumerable<FlightModel>? TestFlightData { get; set; }
+		internal IEnumerable<HotelModel>? TestHotelData { get; set; }
+		internal const string DateFormat = "yyyy/MM/dd";
 
 		[TestMethod]
 		public void Customer1()
@@ -37,10 +39,21 @@ namespace HolidaySearchFeature.Tests
 			 * Departure Date: 2023/07/01
 			 * Duration: 7 nights
 			 */
+			var searchCriteria = new HolidayCriteria
+			{
+				DepartingFrom = "MAN",
+				TravelingTo = "AGP",
+				DepartureDate = System.DateTime.ParseExact("2023/07/01", DateFormat, null),
+				Duration = 7
+			};
 
+
+			var holidays = new FindMyHoliday(TestHotelData, TestFlightData).Search(searchCriteria);
 
 			//Expects:
 			// * Flight 2 and Hotel 9
+			Assert.IsTrue(holidays.First().Flight.Id == 2);
+			Assert.IsTrue(holidays.First().Hotel.Id == 9);
 		}
 
 		[TestMethod]
@@ -52,10 +65,20 @@ namespace HolidaySearchFeature.Tests
 			 * Departure Date: 2023/06/15
 			 * Duration: 10 nights
 			 */
+			var searchCriteria = new HolidayCriteria
+			{
+				DepartingFrom = "Any London Airport", //TODO: Any London Airport
+				TravelingTo = "PMI",
+				DepartureDate = System.DateTime.ParseExact("2023/06/15", DateFormat, null),
+				Duration = 10
+			};
+			var holidays = new FindMyHoliday(TestHotelData, TestFlightData).Search(searchCriteria);
 
 
 			//Expects:
 			// * Flight 6 and Hotel 5
+			Assert.IsTrue(holidays.First().Flight.Id == 6);
+			Assert.IsTrue(holidays.First().Hotel.Id == 5);
 		}
 
 		[TestMethod]
@@ -67,10 +90,20 @@ namespace HolidaySearchFeature.Tests
 			 * Departure Date: 2022/11/10
 			 * Duration: 14 nights
 			 */
+			var searchCriteria = new HolidayCriteria
+			{
+				DepartingFrom = "Any Airport", //TODO: Any Airport
+				TravelingTo = "LPA",
+				DepartureDate = System.DateTime.ParseExact("2022/11/10", DateFormat, null),
+				Duration = 14
+			};
+			var holidays = new FindMyHoliday(TestHotelData, TestFlightData).Search(searchCriteria);
 
 
 			//Expects:
 			// * Flight 7 and Hotel 6
+			Assert.IsTrue(holidays.First().Flight.Id == 7);
+			Assert.IsTrue(holidays.First().Hotel.Id == 6);
 		}
 
 		[TestCleanup]

@@ -1660,6 +1660,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "HolidaySearchFeature/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/HolidaySearchFeature.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HolidaySearchFeature.dll": {}
+        }
       }
     }
   },
@@ -6193,10 +6203,16 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "HolidaySearchFeature/1.0.0": {
+      "type": "project",
+      "path": "../HolidaySearchFeature/HolidaySearchFeature.csproj",
+      "msbuildProject": "../HolidaySearchFeature/HolidaySearchFeature.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "HolidaySearchFeature >= 1.0.0",
       "MSTest.TestAdapter >= 2.2.7",
       "MSTest.TestFramework >= 2.2.7",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
@@ -6234,7 +6250,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\DanniBunny\\Documents\\GitHub\\OnTheBeach-HolidaySearchFeature\\HolidaySearchFeature\\HolidaySearchFeature.csproj": {
+              "projectPath": "C:\\Users\\DanniBunny\\Documents\\GitHub\\OnTheBeach-HolidaySearchFeature\\HolidaySearchFeature\\HolidaySearchFeature.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

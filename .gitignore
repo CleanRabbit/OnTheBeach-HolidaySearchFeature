@@ -15,3 +15,5 @@ HolidaySearchFeature/.vs/HolidaySearchFeature/v17/.suo
 HolidaySearchFeature.Tests/obj/HolidaySearchFeature.Tests.csproj.nuget.dgspec.json
 HolidaySearchFeature.Tests/obj/Debug/net6.0/HolidaySearchFeature.Tests.csproj.AssemblyReference.cache
 HolidaySearchFeature.Tests/obj/project.nuget.cache
+*.cache
+HolidaySearchFeature/.vs/HolidaySearchFeature/v17/.suo

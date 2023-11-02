@@ -1,35 +1,13 @@
 ﻿using HolidaySearchFeature.DataModels;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text.Json;
 
 namespace HolidaySearchFeature.Tests
 {
 	[TestClass]
-	public class PreDefinedTests
+	public class PreDefinedTests : TestClassBase
 	{
-		[TestInitialize]
-		public void Init()
-		{
-			var reader = new StreamReader("FlightData.json");
-			var flightDataAsJson = reader.ReadToEnd();
-			TestFlightData = JsonSerializer.Deserialize<List<FlightModel>>(flightDataAsJson, new JsonSerializerOptions { PropertyNameCaseInsensitive=true,});
-			reader.Close();
-
-			reader = new StreamReader("HotelData.json");
-			var hotelDataAsJson = reader.ReadToEnd();
-			TestHotelData = JsonSerializer.Deserialize<List<HotelModel>>(hotelDataAsJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true, });
-			reader.Close();
-
-		}
-
-		internal IEnumerable<FlightModel>? TestFlightData { get; set; }
-		internal IEnumerable<HotelModel>? TestHotelData { get; set; }
-		internal const string DateFormat = "yyyy/MM/dd";
-
 		[TestMethod]
 		public void Customer1()
 		{
@@ -104,12 +82,6 @@ namespace HolidaySearchFeature.Tests
 			// * Flight 7 and Hotel 6
 			Assert.IsTrue(holidays.First().Flight.Id == 7);
 			Assert.IsTrue(holidays.First().Hotel.Id == 6);
-		}
-
-		[TestCleanup]
-		public void CleanUp()
-		{
-			
 		}
 	}
 }

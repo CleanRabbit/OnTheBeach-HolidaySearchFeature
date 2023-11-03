@@ -30,7 +30,7 @@ namespace HolidaySearchFeature.Tests
 			var searchCriteria = new HolidayCriteria
 			{
 				HotelName = "Boutique Hotel Cordial La Peregrina",
-				ArrivalDate = System.DateTime.ParseExact("2022/10/10", DateFormat, null)
+				DepartureDate = System.DateTime.ParseExact("2022/10/10", DateFormat, null)
 			};
 
 

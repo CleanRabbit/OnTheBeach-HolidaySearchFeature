@@ -43,7 +43,7 @@ namespace HolidaySearchFeature.Tests
 			var searchCriteria = new HolidayCriteria
 			{
 				HotelName = "Jumeirah Port Soller",
-				ArrivalDate = System.DateTime.ParseExact("2023-06-15", DateFormat, null)
+				ArrivalDate = System.DateTime.ParseExact("2023/06/15", DateFormat, null)
 			};
 
 

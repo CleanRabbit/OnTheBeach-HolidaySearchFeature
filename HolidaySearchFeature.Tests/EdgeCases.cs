@@ -14,7 +14,7 @@ namespace HolidaySearchFeature.Tests
 			{
 				DepartingFrom = "MAN",
 				TravelingTo = "AGP",
-				DepartureDate = System.DateTime.ParseExact("2023-04-11", DateFormat, null)
+				DepartureDate = System.DateTime.ParseExact("2023/04/11", DateFormat, null)
 			};
 
 
